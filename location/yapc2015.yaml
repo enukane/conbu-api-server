@@ -1,0 +1,43 @@
+track_a:
+ - AP-017
+ - AP-018
+ - AP-019
+ - AP-020
+ - AP-105
+ - AP-106
+ - AP-107
+ - AP-108
+ - AP-109
+ - AP-110
+ - AP-111
+ - AP-112
+track_b:
+ - AP-009
+ - AP-010
+ - AP-103
+track_c:
+ - AP-014
+ - AP-104
+ - AP-134
+track_d:
+ - AP-001
+ - AP-002
+ - AP-101
+ - AP-023
+track_e:
+ - AP-003
+ - AP-004
+ - AP-022
+ - AP-102
+6f-reception:
+ - AP-005
+lobby:
+ - AP-006
+7f-reception:
+ - AP-007
+lobby1:
+ - AP-011
+ - AP-012
+lobby2:
+ - AP-015
+ - AP-016

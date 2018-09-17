@@ -1,0 +1,28 @@
+group_dai:
+ - AP35-3
+ - AP36-4
+ - AP36-5
+ - AP36-6
+group_ab:
+ - AP35-10
+ - AP35-4
+ - AP35-6
+ - AP35-9
+ - AP36-7
+group_cd:
+ - AP35-12
+ - AP35-8
+ - AP36-2
+ - AP36-3
+group_e:
+ - AP35-11
+ - AP36-1
+group_ent:
+ - AP35-7
+group_other:
+ - AP35-1
+ - AP35-2
+ - AP35-5
+group_noc:
+ - AP35-8
+

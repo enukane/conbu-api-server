@@ -1,0 +1,46 @@
+track_1:
+ - AP101
+ - AP102
+ - AP103
+ - AP104
+ - AP105
+ - AP106
+sponsor:
+ - AP107
+ - AP108
+ - AP109
+ - AP110
+satellite:
+ - AP111
+ - AP112
+track_2:
+ - AP201
+ - AP202
+ - AP203
+ - AP204
+ - AP205
+ - AP206
+ - AP207
+track_3:
+ - AP301
+ - AP302
+lobby:
+ - AP407
+track_4:
+ - AP405
+ - AP406
+ - AP407
+track_5:
+ - AP401
+ - AP402
+ - AP403
+noc:
+ - AP408
+track_6:
+ - AP601
+track_7:
+ - AP602
+track_8:
+ - AP604
+waiting:
+ - AP605

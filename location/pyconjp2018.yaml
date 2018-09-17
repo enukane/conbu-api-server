@@ -1,0 +1,38 @@
+floor_1:
+ - AP101
+ - AP102
+ - AP103
+ - AP104
+ - AP105
+ - AP106
+ - AP107
+ - AP108
+ab:
+ - AP109
+ - AP110
+floor_2:
+ - AP201
+ - AP202
+ - AP203
+ - AP204
+floor_3:
+ - AP301
+ - AP302
+floor_4:
+ - AP401
+ - AP402
+ - AP403
+ - AP404
+ - AP405
+ - AP406
+lobby:
+ - AP407
+staff:
+ - AP408
+floor_6c:
+ - AP601
+floor_6d:
+ - AP602
+ - AP603
+floor_6e:
+ - AP604

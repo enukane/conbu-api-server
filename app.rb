@@ -6,14 +6,29 @@
 require 'sinatra'
 require 'pit'
 require 'json'
-
-require_relative './location/pyconjp2018'
-$location = @location
+require 'yaml'
+require "pp"
 
 require 'drb/drb'
 uri = 'druby://localhost:8282'
 DRb.start_service
 $zabbix = DRbObject.new_with_uri(uri)
+
+LOCATION_PATH="./location"
+$eventname = ARGV[0] || ENV["CONBU_API_SERVER_EVENT"]
+
+event_location_path = "#{LOCATION_PATH}/#{$eventname}.yaml"
+if File.exist?(event_location_path)
+  location_data = File.read(event_location_path)
+  $location = YAML.load(location_data)
+  $location['all'] = $location.values.inject(:+)
+  puts "===== event: #{$eventname}'s AP groups ====="
+  pp $location
+  puts "===================="
+else
+  STDERR.puts "ERROR: location data for '#{$eventname}' not found"
+  exit(1)
+end
 
 get '/' do
   redirect '/v1/version'
@@ -37,7 +52,7 @@ get '/v1/associations/:location/:band' do
   band  = params[:band]
   case location
   when 'all'
-  when /#{@ap_name_pattern}/
+  when /#{$location[:ap_name_pattern]}/
   when *$location.keys.map(&:to_s)
   else
     halt 404
@@ -88,12 +103,12 @@ def associations(location, band)
   associations = $zabbix.get_associations
 
   result = 0
-  locations = $location[:all]
-  unless $location.keys.include? location.to_sym
-    halt 404 if associations[location.to_s].nil?
+  locations = $location["all"]
+  unless $location.keys.include? location
+    halt 404 if associations[location].nil?
     locations = [location.to_sym]
   else
-    locations = $location[location.to_sym]
+    locations = $location[location]
   end
   locations.each do |ap|
     ap = ap.to_s
@@ -111,3 +126,4 @@ end
 def traffics()
   $zabbix.get_traffics
 end
+ 
